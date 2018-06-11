@@ -1,0 +1,10 @@
+type User {
+    id: String!
+    name: String!
+    postIds: [String]!
+    getPosts: [Post]!
+}
+
+extend type Query {
+    findAllUsers: [User]
+}

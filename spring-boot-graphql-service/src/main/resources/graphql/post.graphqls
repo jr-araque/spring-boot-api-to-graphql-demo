@@ -1,0 +1,11 @@
+type Post {
+    id: String!
+    title: String!
+    content: String!
+    published: Boolean
+    authorId: String!
+}
+
+extend type Query {
+    posts: [Post]!
+}

@@ -1,0 +1,36 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.13.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.accenture'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('com.graphql-java:graphql-java:6.0')
+	compile('com.graphql-java:graphql-java-tools:4.3.0')
+	compile('com.graphql-java:graphql-java-servlet:4.7.0')
+	compile('com.graphql-java:graphql-spring-boot-starter:3.10.0')
+	compile('com.graphql-java:graphiql-spring-boot-starter:3.10.0')
+	runtime('com.h2database:h2')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
